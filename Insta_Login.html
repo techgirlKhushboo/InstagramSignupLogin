@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <style>
+        .main {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        #instagram{
+           font-size: 30px;
+           font-style: italic;
+        }
+        #item2{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .content {
+             /* border: 2px solid;  */
+            height: 550px;
+            width: 435px;
+        }
+        .inputelement {
+            padding: 9px 67px;
+            margin-bottom: 9px;
+        }
+        #btn{
+            padding:8px 130px;
+            color: white;
+          background-color: #4cb5f9;
+          border: none;
+          border-radius: 8px;
+        }
+
+        .form{
+            padding-top: 42px ;
+            /* border: 2px solid gray; */
+           /* padding: 200px; */  
+        }
+        #loginform{
+border: 0.1px solid rgb(168, 163, 163);
+height: 382px;
+        }
+        #signup{
+            border: 0.1px solid gray;
+        }
+        .GetTheApp{
+            /* border: 2px solid gray; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .GetTheApp img{
+            height: 43px;
+            width: 134px;  
+        }
+        footer{
+            height: 100px;
+            /* width: 100%; */
+            /* border: 2px solid gray; */
+            color: gray;
+            display: flex;
+            flex-direction: row;
+            justify-content: center ;
+            align-items : center;
+             justify-content: space-between; 
+        }  
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="content" id="item1">
+             <img src="https://static.cdninstagram.com/images/instagram/xig/homepage/phones/home-phones-2x.png?__makehaste_cache_breaker=73SVAexZgBW" height="590px"
+             width="435px"; alt="">          </div>
+        <div class="content" id="item2">
+            <div id="loginform">
+                <div id="instagram">
+                    <h1>Instagram </h1>
+                </div id="form">
+                <form action="">
+                    <input type="text" name="euserName" placeholder="Enter Username"> <br> <br>
+                    <input type="text" name="epassword" placeholder="Enter Password"> <br> <br>
+                    <button type="submit" id="btn" name="submit"> Log In </button>
+
+                     <hr style="width: 268; height:14px;">  
+                    <a href="">Log in with Facebook</a> <br> <br>
+                    <a href="" style="text-decoration: none; color: rgb(173, 173, 231);"> Forgot password?</a>
+                </form>
+            </div>
+            <div id="signup"><p>Don't have an Account? <a href="" style="text-decoration: none; color: #4cb5f9;"> Sign up</a></p></div>
+            <div><p>Get the app.</p></div>
+            <div class="GetTheApp"> 
+                <div><img src="https://static.cdninstagram.com/rsrc.php/v3/yz/r/c5Rp7Ym-Klz.png" alt=""></div>
+                <div><img src="https://static.cdninstagram.com/rsrc.php/v3/yu/r/EHY6QnZYdNX.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+<footer > 
+        <div class="items">Meta</div>
+        <div class="items">About</div>
+        <div class="items">Blog</div>
+        <div class="items">Jobs</div>
+        <div class="items">Help</div>
+        <div class="items">API</div>
+        <div class="items">Privacy</div>
+        <div class="items">Terms</div>
+        <div class="items">Locations</div>
+        <div class="items">Instagrma Lite</div>
+        <div class="items">Threads</div>
+        <div class="items">Contact Uploading & Non-Users</div>
+        <div class="items">Meta Verified</div>
+    </footer>
+
+    <script>
+        let form = document.querySelector("form")
+        
+        form.addEventListener("submit" , (e)=>{
+            e.preventDefault();
+
+            let euserName = document.getElementsByName("euserName");
+            let ePassword = document.getElementsByName("epassword");
+
+            let userName = localStorage.getItem("userName");
+            let password = localStorage.getItem("password");
+
+            if (euserName==userName && epassword==password) {
+                alert("Login Successfully")
+                open("./homepage.html")
+            }
+            else if (euserName == " ") {
+                alert("UserName should not be Empty"); 
+            }
+            else if (epassword == " ") {
+                alert("Password should not be Empty");
+            }
+             else {
+                alert("Invalid Credentials") ;
+            }
+        });
+    </script>
+</body>
+</html>

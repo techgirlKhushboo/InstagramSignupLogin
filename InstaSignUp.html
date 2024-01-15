@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+       section{
+        width: 45%;
+        height: 30%;
+        margin-left: 30%;
+       }
+        section div {
+            border: 2px solid gray;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #heading{
+           
+        }
+        #item{
+
+        }
+        h1{
+            font-size: 74px;
+            font-style: italic;
+        }
+        a,p{
+            font-size: small;
+            text-decoration: none;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px; 
+        }
+         button {
+            text-decoration: none;
+             color:white ; 
+            background-color: #4cb5f9;
+            border-radius: 2px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="main">
+        <div>
+            <form action="">
+                <div id="mainhead"><h1>Instagram</h1>
+                <p>Sign up to see photos and videos from your friends.</p>  </div> 
+                <button>Login in with Facebook</button>
+                <input type="email" placeholder="Mobile No or Email">
+                <input type="text" placeholder="Full Name">
+
+                <input type="text" name="userName" placeholder="Enter Username"> <br> <br>
+                <input type="text" name="password" placeholder="Enter Password"> <br> <br>
+
+                <p>People who use our service may have uploaded your contact information to Instagram.<a href="#">Learn
+                        More</a></p>
+                <p>By signing up, you agree to our Terms , Privacy Policy and Cookies Policy </p>
+                <button type="submit" name="submit"> Sign up</button>
+            </form>
+        </div>
+        <div class="container" id="item2">
+            <p>Have an account? <a href="#">Log in</a></p>
+        </div>
+    </section>
+
+    <script>
+        let form = document.querySelector("form");
+        // console.log(form);
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            let userName = document.getElementsByName("userName")[0].value;
+            let password = document.getElementsByName("password")[0].value;
+            console.log(userName);
+            console.log(password);
+
+
+            // To apply Conditions
+            if (userName == " " && password == " ") {
+                alert("Crendentials should not be Empty");
+            }
+            else if (userName == " ") {
+                alert("UserName should not be Empty"); 
+            }
+            else if (password == " ") {
+                alert("password should not be Empty");
+            }
+            else {
+                // To Store Data in local Storage
+                localStorage.setItem("userName", userName);
+                localStorage.setItem("password", password);
+
+                alert("Registered Successfully");
+                open("./Insta_Login.html")    //To Open new Webpage
+            }
+        });
+    </script>
+</body>
+</html>
